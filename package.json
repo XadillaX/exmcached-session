@@ -1,0 +1,35 @@
+{
+  "name": "exmcached-session",
+  "version": "1.0.0",
+  "description": "Session store for expressjs with memcached.",
+  "main": "exmcached.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "memcached": "^2.2.1"
+  },
+  "devDependencies": {
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XadillaX/exmcached-session.git"
+  },
+  "keywords": [
+    "session",
+    "expressjs",
+    "memcached"
+  ],
+  "author": "XadillaX <i@2333.moe>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XadillaX/exmcached-session/issues"
+  },
+  "homepage": "https://github.com/XadillaX/exmcached-session#readme"
+}
