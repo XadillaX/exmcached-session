@@ -18,7 +18,7 @@ app.use(session({
     secret: "*@&#(!@*#)!@(*)(!*@)",
     key: "boom-shakalaka",
     store: new MemcachedStore({
-        hosts: [ "127.0.0.1:11211" ],
+        hosts: "127.0.0.1:11211",
         prefix: "test"
     })
 }));

@@ -10,7 +10,7 @@ var DEFAULT_AGE = 86400;
 
 var util = require("util");
 
-var Memcached = require("memcached");
+var Memcached = require("memjs");
 
 var emptyFunc = function() {};
 
@@ -23,8 +23,8 @@ module.exports = function(session) {
 
         this.prefix = options.prefix || "MS_";
         if(!options.client) {
-            if(!options.hosts) options.hosts = [ "127.0.0.1:11211" ];
-            options.client = new Memcached(options.hosts, options);
+            if(!options.hosts) options.hosts = "127.0.0.1:11211";
+            options.client = Memcached.Client.create(options.hosts, options);
         }
 
         this.client = options.client;
@@ -59,7 +59,7 @@ module.exports = function(session) {
         try {
             var age = parseInt(data.cookie.maxAge / 1000) || DEFAULT_AGE;
             var session = JSON.stringify(data);
-            this.client.set(this._getKey(key), session, age, callback);
+            this.client.set(this._getKey(key), session, callback, age);
         } catch(e) {
             callback(e);
         }
@@ -67,18 +67,15 @@ module.exports = function(session) {
 
     MemcachedStore.prototype.destroy = function(key, callback) {
         if(undefined === callback) callback = emptyFunc;
-        this.client.del(this._getKey(key), callback);
-    };
-
-    MemcachedStore.prototype.length = function(callback) {
-        if(undefined === callback) callback = emptyFunc;
-        this.client.items(callback);
+        this.client.delete(this._getKey(key), callback);
     };
 
     MemcachedStore.prototype.clear = function(callback) {
         if(undefined === callback) callback = emptyFunc;
         this.client.flush(callback);
     };
+
+    MemcachedStore.prototype.touch = MemcachedStore.prototype.set;
 
     return MemcachedStore;
 };

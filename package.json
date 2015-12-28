@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "memcached": "^2.2.1"
+    "memjs": "^0.8.9"
   },
   "devDependencies": {
     "cookie-parser": "^1.4.0",
