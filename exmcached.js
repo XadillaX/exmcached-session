@@ -46,7 +46,7 @@ module.exports = function(session) {
             try {
                 callback(
                     undefined,
-                    callback(undefined, JSON.parse(result.toString())));
+                    JSON.parse(result.toString()));
             } catch(e) {
                 callback(e);
             }
