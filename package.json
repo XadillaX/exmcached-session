@@ -1,6 +1,6 @@
 {
   "name": "exmcached-session",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Session store for expressjs with memcached.",
   "main": "exmcached.js",
   "directories": {
