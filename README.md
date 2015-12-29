@@ -46,7 +46,7 @@ http.createServer(app).listen(9341, function() {
 
 + `hosts`: Memcached servers locations, this is a string.
 + `prefix`: An optional prefix for each memcache key, in case you are sharing your memcached servers with something generating its own keys.
-+ ... Rest of given option will be passed directly to the node-memcached constructor.
++ ... Rest of given option will be passed directly to the memjs constructor.
 
 For details see [memjs](http://amitlevy.com/projects/memjs/).
 
