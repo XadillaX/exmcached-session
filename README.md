@@ -1,4 +1,4 @@
-# Exmached Session
+# Exmcached Session
 
 Ⓜ️ Session store for expressjs with memcached.
 
