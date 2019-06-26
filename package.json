@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "memjs": "^0.8.9"
+    "memjs": "^1.2.2"
   },
   "devDependencies": {
     "cookie-parser": "^1.4.0",
